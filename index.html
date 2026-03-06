@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Strategy Proposal — Luxury Home-Service Spa</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ivory: #F8F3EC;
+  --ivory2: #EDE6D8;
+  --warm: #D4C5A9;
+  --gold: #B89A5A;
+  --gold2: #8C7240;
+  --deep: #1C1612;
+  --ink: #2E2720;
+  --charcoal: #3D3530;
+  --muted: #7A6E64;
+  --sage: #7D8C78;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ── COVER PAGE ── */
+.cover {
+  min-height: 100vh;
+  background: var(--deep);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 30%, rgba(184,154,90,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(184,154,90,0.04) 0%, transparent 60%);
+}
+
+.cover-ornament {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 32px;
+  position: relative;
+}
+.cover-ornament::before, .cover-ornament::after {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 6px;
+  color: var(--gold);
+}
+.cover-ornament::before { left: -12px; }
+.cover-ornament::after { right: -12px; }
+
+.cover-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  animation: fadeIn 1s ease 0.2s both;
+}
+
+.cover h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 7vw, 74px);
+  font-weight: 400;
+  color: var(--ivory);
+  line-height: 1.1;
+  margin-bottom: 8px;
+  animation: fadeIn 1s ease 0.4s both;
+}
+
+.cover h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.cover-sub {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--warm);
+  margin-bottom: 48px;
+  animation: fadeIn 1s ease 0.6s both;
+}
+
+.cover-rule {
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 48px;
+  animation: fadeIn 1s ease 0.7s both;
+}
+
+.cover-meta {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  animation: fadeIn 1s ease 0.9s both;
+  line-height: 2;
+}
+
+.cover-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: fadeIn 1s ease 1.2s both;
+  cursor: pointer;
+}
+.cover-scroll span {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease infinite;
+}
+@keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── MAIN CONTENT ── */
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+/* Section titles */
+.section-marker {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.section-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ivory2);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.section-label {
+  flex: 1;
+}
+
+.section-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 500;
+  color: var(--deep);
+  line-height: 1.2;
+}
+
+/* Pull quotes */
+.pull-quote {
+  border-left: 2px solid var(--gold);
+  padding: 20px 32px;
+  margin: 48px 0;
+  background: linear-gradient(to right, rgba(184,154,90,0.05), transparent);
+}
+
+.pull-quote p {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 3vw, 28px);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.pull-quote cite {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 16px;
+  font-style: normal;
+}
+
+/* Body text */
+.body-text {
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--charcoal);
+  margin-bottom: 24px;
+}
+
+.body-text strong {
+  color: var(--deep);
+  font-weight: 500;
+}
+
+/* Three pillars */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin: 48px 0;
+  background: var(--gold);
+}
+
+.pillar {
+  background: var(--deep);
+  padding: 36px 28px;
+  text-align: center;
+}
+
+.pillar-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.pillar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.pillar-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--warm);
+  letter-spacing: 0.3px;
+}
+
+/* Content calendar */
+.calendar {
+  margin: 48px 0;
+  border: 1px solid var(--ivory2);
+}
+
+.cal-header {
+  background: var(--deep);
+  padding: 20px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cal-header-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--ivory);
+}
+
+.cal-header-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.cal-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  border-bottom: 1px solid var(--ivory2);
+  transition: background 0.2s;
+}
+.cal-row:last-child { border-bottom: none; }
+.cal-row:hover { background: rgba(184,154,90,0.04); }
+
+.cal-day {
+  padding: 18px 20px;
+  border-right: 1px solid var(--ivory2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(184,154,90,0.03);
+}
+
+.cal-day-name {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold2);
+}
+
+.cal-content {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cal-tag {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tag-edu { background: rgba(125,140,120,0.15); color: var(--sage); }
+.tag-trust { background: rgba(184,154,90,0.12); color: var(--gold); }
+.tag-luxury { background: rgba(30,20,12,0.08); color: var(--charcoal); }
+.tag-tips { background: rgba(125,140,120,0.15); color: var(--sage); }
+.tag-book { background: rgba(184,154,90,0.2); color: var(--gold2); border: 1px solid rgba(184,154,90,0.3); }
+.tag-bts { background: rgba(100,80,60,0.1); color: var(--charcoal); }
+.tag-brand { background: rgba(184,154,90,0.08); color: var(--muted); }
+
+.cal-desc {
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  color: var(--charcoal);
+  line-height: 1.5;
+}
+
+/* Viral concepts */
+.viral-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 48px 0;
+}
+
+.viral-card {
+  border: 1px solid var(--ivory2);
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.viral-card:hover { border-color: var(--gold); }
+
+.viral-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.viral-card:hover::before { opacity: 1; }
+
+.viral-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ivory2);
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  line-height: 1;
+}
+
+.viral-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--deep);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.viral-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* Competitor section */
+.competitor-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin: 48px 0;
+  background: var(--ivory2);
+}
+
+.comp-side {
+  padding: 36px 32px;
+  background: var(--ivory);
+}
+.comp-side.theirs { background: rgba(200,190,180,0.3); }
+
+.comp-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ivory2);
+}
+.comp-side.theirs .comp-label { color: var(--muted); }
+.comp-side.ours .comp-label { color: var(--gold); }
+
+.comp-point {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+  align-items: flex-start;
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  color: var(--charcoal);
+  line-height: 1.5;
+}
+.comp-point .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+.comp-side.theirs .dot { background: var(--muted); }
+.comp-side.ours .dot { background: var(--gold); }
+
+/* Pricing */
+.pricing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 48px 0;
+}
+
+.price-card {
+  border: 1px solid var(--ivory2);
+  padding: 40px 32px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.price-card.featured {
+  background: var(--deep);
+  border-color: var(--gold);
+}
+
+.price-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--deep);
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  white-space: nowrap;
+}
+
+.price-name {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.price-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--deep);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.price-card.featured .price-amount { color: var(--ivory); }
+
+.price-period {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.price-divider {
+  height: 1px;
+  background: var(--ivory2);
+  margin-bottom: 28px;
+}
+.price-card.featured .price-divider { background: rgba(255,255,255,0.1); }
+
+.price-feature {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.price-card.featured .price-feature { color: var(--warm); }
+
+.price-check {
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Close section */
+.close-section {
+  background: var(--deep);
+  padding: 80px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.close-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(184,154,90,0.07) 0%, transparent 70%);
+}
+
+.close-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ivory);
+  line-height: 1.3;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.close-section h2 span { color: var(--gold); }
+
+.close-section p {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--warm);
+  max-width: 500px;
+  margin: 0 auto 48px;
+  line-height: 1.8;
+  position: relative;
+}
+
+.close-rule {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 40px;
+}
+
+.close-signature {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.close-name {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  position: relative;
+}
+
+/* Section dividers */
+.ornament-divider {
+  text-align: center;
+  margin: 64px 0;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 8px;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .pillars { grid-template-columns: 1fr; }
+  .viral-grid { grid-template-columns: 1fr; }
+  .competitor-box { grid-template-columns: 1fr; }
+  .pricing { grid-template-columns: 1fr; }
+  .cal-row { grid-template-columns: 80px 1fr; }
+  .page { padding: 60px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-ornament"></div>
+  <div class="cover-eyebrow">Content Strategy Proposal</div>
+  <h1>Building Manila's<br><em>Most Recognizable</em><br>Luxury Spa Brand</h1>
+  <div class="cover-sub">A Digital Growth Strategy for Your Home-Service Spa</div>
+  <div class="cover-rule"></div>
+  <div class="cover-meta">
+    Prepared for Mr. Loh Mun Sung<br>
+    Luxury Home-Service Spa · Manila, Philippines
+  </div>
+  <div class="cover-scroll" onclick="document.getElementById('start').scrollIntoView({behavior:'smooth'})">
+    <span>Read Proposal</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- OPENING -->
+<section id="start" class="page">
+  <div class="reveal">
+    <div class="pull-quote">
+      <p>"The opportunity here isn't simply to run a spa — it is to build one of the most recognizable luxury home-service spa brands in all of Manila."</p>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <p class="body-text">Good morning, Mr. Loh. Thank you for your time and for the trust you've shown in this conversation.</p>
+    <p class="body-text">I have studied the concept you are building carefully. What you have isn't just a service — it's the beginning of a <strong>luxury lifestyle brand</strong>. And luxury brands grow through three things: <strong>visibility, consistency, and trust.</strong></p>
+    <p class="body-text">My role would be ensuring that your brand appears — with precision and elegance — in front of every person in Manila who values premium wellness. Not just occasionally. <em>Consistently.</em></p>
+    <p class="body-text">I don't simply create posts. I build <strong>digital ecosystems</strong> that turn attention into bookings, and bookings into loyal, returning clients.</p>
+  </div>
+
+  <div class="ornament-divider reveal">◆ &nbsp; ◆ &nbsp; ◆</div>
+</section>
+
+<!-- THREE PILLARS -->
+<section style="background: var(--deep); padding: 80px 40px;">
+  <div style="max-width:780px; margin:0 auto;">
+    <div class="reveal" style="text-align:center; margin-bottom:48px;">
+      <div class="section-eyebrow" style="color:var(--gold); font-family:'Jost',sans-serif; font-size:9px; letter-spacing:4px; text-transform:uppercase; margin-bottom:12px;">The Strategic Foundation</div>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(26px,4vw,42px); font-weight:400; font-style:italic; color:var(--ivory); line-height:1.2;">Three Pillars of<br>Luxury Brand Growth</h2>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar">
+        <span class="pillar-icon">👁</span>
+        <div class="pillar-title">Visibility</div>
+        <div class="pillar-text">Every person in Manila searching for massage, relaxation, or premium wellness should encounter your brand — repeatedly, beautifully, and at exactly the right moment.</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">🤝</span>
+        <div class="pillar-title">Trust</div>
+        <div class="pillar-text">A home-service client invites your therapist into their private space. Trust isn't assumed — it is built, carefully, through consistent and credible content before the first booking is ever made.</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">✦</span>
+        <div class="pillar-title">Aspiration</div>
+        <div class="pillar-text">Luxury is not a price point. It is a feeling. Your content will position your spa as a symbol of a life well-lived — comfort, refinement, and the unapologetic art of caring for oneself.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEKLY CADENCE -->
+<section class="page">
+  <div class="reveal">
+    <div class="section-marker">
+      <div class="section-num">01</div>
+      <div class="section-label">
+        <div class="section-eyebrow">Content Architecture</div>
+        <div class="section-title">The Weekly Content Cadence</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <p class="body-text">Every great luxury brand tells a story — not once, but daily. The following cadence ensures your brand shows up consistently, purposefully, and in the right tone for each day's audience mindset.</p>
+  </div>
+
+  <div class="calendar reveal">
+    <div class="cal-header">
+      <div class="cal-header-title">Weekly Content Plan</div>
+      <div class="cal-header-sub">7 Days · 7 Intentions</div>
+    </div>
+    <div class="cal-row">
+      <div class="cal-day"><div class="cal-day-name">Mon</div></div>
+      <div class="cal-content">
+        <span class="cal-tag tag-edu">Education</span>
+        <div class="cal-desc">Wellness authority content — stress signals, massage benefits, why self-care is non-negotiable</div>
+      </div>
+    </div>
+    <div class="cal-row">
+      <div class="cal-day"><div class="cal-day-name">Tue</div></div>
+      <div class="cal-content">
+        <span class="cal-tag tag-trust">Trust</span>
+        <div class="cal-desc">Real client testimonials and genuine experiences that reassure future clients before they book</div>
+      </div>
+    </div>
+    <div class="cal-row">
+      <div class="cal-day"><div class="cal-day-name">Wed</div></div>
+      <div class="cal-content">
+        <span class="cal-tag tag-luxury">Luxury</span>
+        <div class="cal-desc">Cinematic lifestyle content — the spa experience delivered to your door, beautifully portrayed</div>
+      </div>
+    </div>
+    <div class="cal-row">
+      <div class="cal-day"><div class="cal-day-name">Thu</div></div>
+      <div class="cal-content">
+        <span class="cal-tag tag-tips">Value</span>
+        <div class="cal-desc">Saveable wellness tips that position the brand as a trusted resource — not just a vendor</div>
+      </div>
+    </div>
+    <div class="cal-row">
+      <div class="cal-day"><div class="cal-day-name">Fri</div></div>
+      <div class="cal-content">
+        <span class="cal-tag tag-book">Bookings</span>
+        <div class="cal-desc">Strategic promotional content engineered to convert — designed to end the week with appointments</div>
+      </div>
+    </div>
+    <div class="cal-row">
+      <div class="cal-day"><div class="cal-day-name">Sat</div></div>
+      <div class="cal-content">
+        <span class="cal-tag tag-bts">Behind-the-Scenes</span>
+        <div class="cal-desc">Therapist stories and human moments that build warmth and deepen brand loyalty</div>
+      </div>
+    </div>
+    <div class="cal-row" style="border-bottom:none">
+      <div class="cal-day"><div class="cal-day-name">Sun</div></div>
+      <div class="cal-content">
+        <span class="cal-tag tag-brand">Brand</span>
+        <div class="cal-desc">Serene, aspirational visuals that close the week with calm — and plant the seed for Monday's mood</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIRAL CONCEPTS -->
+<section style="background: rgba(184,154,90,0.04); padding: 0;">
+<div class="page">
+  <div class="reveal">
+    <div class="section-marker">
+      <div class="section-num">02</div>
+      <div class="section-label">
+        <div class="section-eyebrow">Growth & Reach</div>
+        <div class="section-title">High-Impact Viral Concepts</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <p class="body-text">Beyond the daily cadence, we will deploy content formats specifically engineered to <strong>expand your reach</strong> — attracting new audiences while reinforcing your premium positioning.</p>
+  </div>
+
+  <div class="viral-grid reveal">
+    <div class="viral-card">
+      <div class="viral-num">1</div>
+      <div class="viral-title">The Transformation Reel</div>
+      <div class="viral-desc">Before-stress and after-massage — a visceral, emotional contrast that resonates deeply and drives shares</div>
+    </div>
+    <div class="viral-card">
+      <div class="viral-num">2</div>
+      <div class="viral-title">The Arrival Experience</div>
+      <div class="viral-desc">Cinematic reel: therapist arrives at a luxury condo, transforms the room into a private sanctuary. Pure aspiration.</div>
+    </div>
+    <div class="viral-card">
+      <div class="viral-num">3</div>
+      <div class="viral-title">5 Signs Your Body Needs This</div>
+      <div class="viral-desc">Educational reel that generates saves and shares — and ends with a direct call to book</div>
+    </div>
+    <div class="viral-card">
+      <div class="viral-num">4</div>
+      <div class="viral-title">First Session Reactions</div>
+      <div class="viral-desc">Authentic client reactions after their first experience — the most powerful form of social proof</div>
+    </div>
+    <div class="viral-card">
+      <div class="viral-num">5</div>
+      <div class="viral-title">The Art of Stillness</div>
+      <div class="viral-desc">Slow, atmospheric lifestyle content that positions the brand as a symbol of premium self-care culture</div>
+    </div>
+    <div class="viral-card" style="background: var(--deep); border-color: var(--gold);">
+      <div class="viral-num" style="color: rgba(184,154,90,0.15);">+</div>
+      <div class="viral-title" style="color: var(--gold);">Every format optimized for algorithm performance</div>
+      <div class="viral-desc" style="color: var(--warm);">Hooks, pacing, captions, and posting times — all calibrated to maximize reach without sacrificing brand integrity</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- COMPETITOR ANALYSIS -->
+<section class="page">
+  <div class="reveal">
+    <div class="section-marker">
+      <div class="section-num">03</div>
+      <div class="section-label">
+        <div class="section-eyebrow">Market Position</div>
+        <div class="section-title">The Opportunity Others Are Missing</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <p class="body-text">Competitors like Zennya have established early market recognition. But recognition is not the same as brand prestige. There is a significant gap in the market — and <strong>it is yours to own.</strong></p>
+  </div>
+
+  <div class="competitor-box reveal">
+    <div class="comp-side theirs">
+      <div class="comp-label">The Current Market</div>
+      <div class="comp-point"><span class="dot"></span><span>Transactional positioning — focused on price and convenience, not experience</span></div>
+      <div class="comp-point"><span class="dot"></span><span>Inconsistent content with no clear brand voice or visual identity</span></div>
+      <div class="comp-point"><span class="dot"></span><span>Functional, not aspirational — missing the emotional resonance luxury demands</span></div>
+      <div class="comp-point"><span class="dot"></span><span>No premium differentiation to justify higher price points</span></div>
+    </div>
+    <div class="comp-side ours">
+      <div class="comp-label">Your Opportunity</div>
+      <div class="comp-point"><span class="dot"></span><span>Aspirational positioning — a curated lifestyle experience, not a commodity service</span></div>
+      <div class="comp-point"><span class="dot"></span><span>A disciplined brand voice that speaks to high-value clients with elegance and authority</span></div>
+      <div class="comp-point"><span class="dot"></span><span>Emotional storytelling that makes clients feel something before they ever book</span></div>
+      <div class="comp-point"><span class="dot"></span><span>A brand people recognize, return to, and recommend without being asked</span></div>
+    </div>
+  </div>
+
+  <div class="pull-quote reveal">
+    <p>"Rather than competing on price, this strategy positions your spa as the premium curated experience — the name in Manila that people associate with the highest quality in the category."</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section style="background: var(--ivory2); padding: 0;">
+<div class="page">
+  <div class="reveal">
+    <div class="section-marker">
+      <div class="section-num">04</div>
+      <div class="section-label">
+        <div class="section-eyebrow">Investment</div>
+        <div class="section-title">Two Paths to Growth</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <p class="body-text">I have structured two options to match where you are in your growth journey. Both are designed to deliver measurable return — the difference is the speed and scale of impact.</p>
+  </div>
+
+  <div class="pricing reveal">
+    <div class="price-card">
+      <div class="price-name">Starter Strategy</div>
+      <div class="price-amount" style="font-size:42px;">$650</div>
+      <div class="price-period">per month</div>
+      <div class="price-divider"></div>
+      <div class="price-feature"><span class="price-check">◆</span><span>3–4 social media posts per week</span></div>
+      <div class="price-feature"><span class="price-check">◆</span><span>Viral video concepts & scripts</span></div>
+      <div class="price-feature"><span class="price-check">◆</span><span>Professional caption writing</span></div>
+      <div class="price-feature"><span class="price-check">◆</span><span>Monthly structured content plan</span></div>
+      <div class="price-feature"><span class="price-check">◆</span><span>Brand active & consistently visible online</span></div>
+      <div style="margin-top:24px; font-family:'Jost',sans-serif; font-size:11px; color:var(--muted); font-style:italic; line-height:1.6;">Ideal for businesses ready to establish their digital presence before scaling to full strategy.</div>
+    </div>
+    <div class="price-card featured">
+      <div class="price-badge">Recommended</div>
+      <div class="price-name">Full Strategy</div>
+      <div class="price-amount">$1,100</div>
+      <div class="price-period" style="color:var(--warm);">per month — full-time</div>
+      <div class="price-divider"></div>
+      <div class="price-feature"><span class="price-check">◆</span><span>Daily social media content across platforms</span></div>
+      <div class="price-feature"><span class="price-check">◆</span><span>SEO blog articles for organic search visibility</span></div>
+      <div class="price-feature"><span class="price-check">◆</span><span>Viral video concepts & full campaign planning</span></div>
+      <div class="price-feature"><span class="price-check">◆</span><span>Promotional & advertising campaigns</span></div>
+      <div class="price-feature"><span class="price-check">◆</span><span>Full content & digital marketing strategy</span></div>
+      <div class="price-feature"><span class="price-check">◆</span><span>Dedicated content department — entirely yours</span></div>
+      <div style="margin-top:24px; font-family:'Jost',sans-serif; font-size:11px; color:var(--warm); font-style:italic; line-height:1.6;">Hiring separate freelancers for each service would cost 3–5× more. This is your full content operation, unified.</div>
+    </div>
+  </div>
+
+  <div class="reveal" style="background:var(--deep); padding:36px 40px; margin-top:0;">
+    <p style="font-family:'Playfair Display',serif; font-size:clamp(17px,2.5vw,22px); font-style:italic; color:var(--ivory); line-height:1.6; text-align:center;">At a premium session rate of $150–$300, my strategy needs to generate just <span style="color:var(--gold);">4 to 8 new bookings per month</span> to pay for itself — a target I am fully confident we will surpass.</p>
+  </div>
+</div>
+</section>
+
+<!-- CLOSE -->
+<section class="close-section">
+  <div class="reveal">
+    <div class="close-rule"></div>
+    <h2>The Goal Is Not Social Media.<br>The Goal Is a <span>Legacy Brand.</span></h2>
+    <p>If we execute this strategy with consistency and intention, your spa will not simply be another service in Manila. It will become the name people say when someone asks for the very best — a lifestyle brand people remember, return to, and recommend without being asked.</p>
+    <p style="margin-bottom:32px;">I am confident you will see the impact within <strong style="color:var(--gold);">the first 60 days.</strong> And I am ready to begin from day one.</p>
+    <div class="close-rule"></div>
+    <div class="close-signature">With confidence and commitment,</div>
+    <div class="close-name">Your Content Specialist · Manila</div>
+  </div>
+</section>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
